@@ -1,0 +1,27 @@
+<div class="login-container">
+  <div class="login-form">
+    <h1>LOGIN</h1>
+
+    <mat-form-field>
+      <mat-icon class="icon">person</mat-icon>
+      <span class="label">Email</span>
+      <input matInput placeholder="" [formControl]="email" (blur)="updateErrorMessage()" required />
+      @if (email.invalid) {
+      <mat-error>{{errorMessage()}}</mat-error>
+      }
+    </mat-form-field>
+
+    
+    <mat-form-field>
+      <mat-icon class="icon">lock</mat-icon>
+      <span class="label">Contraseña</span>
+      <input matInput type="password" placeholder="" />
+      <button mat-icon-button matSuffix aria-label="Hide password">
+        <mat-icon>visibility</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Login</button>
+
+  </div>
+</div>
